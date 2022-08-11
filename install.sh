@@ -18,4 +18,4 @@ systemctl start apache2.service
 sed -i "s,$WEB_TITLE,WEBPAGE_TITLE,g" /var/www/html/index.html
 sed -i "s,$WEB_HEADER,WEBPAGE_HEADER,g" /var/www/html/index.html
 sed -i "s,$WEB_SUBHEADER,WEBPAGE_SUBHEADER,g" /var/www/html/index.html
-sed -i "s,url(\'../img/$WEB_BACKGROUND.jpg\'),url(\'../img/milestone.jpg\'),g" /var/www/html/index.html
+sed -i "s,url(\'../img/$WEB_BACKGROUND.jpg\'),url(\'../img/milestone.jpg\'),g" /var/www/html/css/custom.css
