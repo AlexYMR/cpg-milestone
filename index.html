@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <!-- required meta tags -->
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <!-- title -->
+        <title>WEBPAGE_TITLE</title>
+        <!-- favicon -->
+        <link rel="icon" type="image/png" href="img/milestone-favicon.png"/>
+
+        <!-- Bootstrap -->
+        <!--<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">-->
+
+        <!-- Google Roboto Font -->
+        <!--<link href="https://fonts.googleapis.com/css?family=Roboto:100,100i,300,300i,400,400i,500,500i,700,700i,900,900i" rel="stylesheet">-->
+
+        <!-- Animate CSS-->
+        <!--<link rel="stylesheet" href="css/animate.css">-->
+
+        <!-- style CSS -->
+        <link rel="stylesheet" href="css/custom.css">
+				<link rel="stylesheet" href="css/normalize.css">
+				<link rel="stylesheet" href="css/skeleton.css">
+    </head>
+
+		<body>
+			<header class="hero">
+				<section class="container">
+					<h1 class="intro">
+						<span class="primary"><i class="fas fa-shopping-bag"></i></span>
+						WEBPAGE_HEADER
+					</h1>
+					<h5>
+						WEBPAGE_SUBHEADER
+					</h5>
+			
+					<div style="margin:0px auto 50px auto; width:40%;" class="lineDecoration"></div>
+			
+					<ul id="menu">
+						<li class="fw">
+							<a href="#">
+								<button id="loginButton" class="main-select button-primary block fw">
+								Log in
+								</button>
+								<button id="registerButton" class="main-select button-primary block fw">
+								Register
+								</button>
+							</a>
+						</li>
+					</ul>
+			
+					<div id="login" class="hidden">
+						<form class="loginForm" action = "" method = "post">
+								<label for="username">Username</label>
+								<input type = "text" name = "username" class = "fw req">
+								<label for="password">Password</label>
+								<input type = "password" name = "password" class = "fw req">
+								<button class="button-primary fw" name="login" type="submit">Log In</button>
+						</form>
+						<button class="button-primary return">Back</button>
+					</div>
+					
+					<div id="registration" class="hidden">
+						<form class="registrationForm" action = "" method = "post">
+								<label for="fn" class="req">First Name</label>
+								<input type = "text" name = "fn" class = "fw">
+								<label for="ln" class="req">Last Name</label>
+								<input type = "text" name = "ln" class = "fw">
+								<label for="username" class="req">Username</label>
+								<input type = "text" name = "username" class = "fw">
+								<label for="password" class="req">Password</label>
+								<input type = "password" name = "password" class = "fw">
+								<label for="re-password" class="req">Re-type Password</label>
+								<input type = "password" name = "re-password" class = "fw">
+								<button class="button-primary fw" name="register" type="submit">Create New Account</button>
+						</form>
+						<button class="button-primary return">Back</button>
+					</div>
+			
+				</section>
+			</header>
+			
+			<!-- Login Stuff -->
+			<script>
+			
+			const menu = document.getElementById("menu");
+			const login = document.getElementById("login");
+			const registration = document.getElementById("registration");
+			
+			const loginButton = document.getElementById("loginButton");
+			const registerButton = document.getElementById("registerButton");
+			
+			const backButtons = document.querySelectorAll(".return");
+			
+			loadListeners();  
+			
+			function loadListeners(){
+				loginButton.addEventListener("click",showLogin);
+				registerButton.addEventListener("click",showRegistration);
+				backButtons.forEach(e => {
+					e.addEventListener("click",goBack);
+				});
+				// backButton.
+			}
+			
+			function showLogin(e){
+				if(e.target === loginButton){
+					menu.classList.add("hidden");
+					document.querySelector("#login").classList.remove("hidden");
+				}
+			}
+			
+			function showRegistration(e){
+				if(e.target === registerButton){
+					menu.classList.add("hidden");
+					document.querySelector("#registration").classList.remove("hidden");
+				}
+			}
+			
+			function goBack(e){
+				// if(backButtons.contains(e.target)){
+					if(!login.classList.contains("hidden")){
+						login.classList.add("hidden");
+					} else if(!registration.classList.contains("hidden")){
+						registration.classList.add("hidden");
+					}
+					menu.classList.remove("hidden");
+				// }
+			}
+			
+			</script>
+		</body>
+</html>

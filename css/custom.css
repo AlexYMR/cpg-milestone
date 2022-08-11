@@ -1,0 +1,233 @@
+*{
+  z-index:3;
+  transition:all .3s ease;
+}
+
+:root{
+	--primary_color:#b62323;/* #a00f0f;*/
+	--dark_primary: #2200; /*first digits for ea. color reduced by 3*/
+	--dark: #42413c;
+	--light_color: #fff;
+}	
+
+.light{
+  color:var(--light_color);
+}
+
+.primary{
+  color:var(--primary_color);
+}
+
+.dark-primary{
+  color:rgb(75, 79, 80);
+}
+
+body{
+  margin:0;
+  color:var(--light_color);
+}
+
+.hero{
+	background: url('../img/milestone.jpg') no-repeat center center/ cover;
+  /* let hero grow if content overflows 100vh, but don't let it become less */
+  min-height:100vh; 
+  background-attachment:fixed; /* fixes bg in place */
+  position:relative;
+}
+
+.hero::before{
+  content:"";
+  position:absolute;
+  top:0;
+  left:0;
+  width:100%;
+  height:100%;
+  background: rgba(0,0,0,.5);
+}
+
+.hero *{
+  z-index:1;
+}
+
+.intro{
+  cursor:default;
+}
+
+.intro > span:last-child{
+  display:inline-block;
+}
+
+/* .intro:hover > span:first-child{
+  transform:scale(2);
+}
+
+.intro:hover > span:last-child{
+  transform:rotate(180deg) scale(1.2);
+  color:#fff;
+} */
+
+.container{
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  justify-content:center;
+  min-height:100vh;
+}
+
+.storeContainer,
+.foodContainer{
+  display:flex;
+  flex-direction:column;
+  /* cross axis */
+  align-items:center;
+  /* main axis */
+  justify-content:center;
+  width:30%;
+  min-width:450px;
+  margin:auto;
+  min-height:100vh;
+  background: #42413c;
+  /* position:relative; makes it lighter color idk why*/
+}
+
+.itemsContainer{
+  display:flex;
+  flex-direction:column;
+  /* cross axis */
+  align-items:center;
+  /* main axis */
+  justify-content:flex-start;
+  width:30%;
+  min-width:450px;
+  margin:auto;
+  min-height:100vh;
+  background: #42413c;
+  /* position:relative; makes it lighter color idk why*/
+}
+
+.storeContainer h1,
+.foodContainer h1,
+.itemsContainer h1{
+  margin-top:2rem;
+}
+
+#total_frame{
+  display:flex;
+  justify-content:space-between;
+}
+
+.backButton{
+  position:absolute;
+  left:0;
+  top:0;
+  z-index:10;
+}
+
+button:hover,
+button-primary:hover{
+  background-color: var(--dark) !important;
+	color: var(--primary_color) !important;
+}
+
+a:hover,a{
+  text-decoration:none;
+}
+
+ul{
+  list-style-type:none !important;
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+}
+
+.lineDecoration{
+	width:80%;
+	height:3px;
+	margin:10px auto 20px auto;
+	background:var(--primary_color);
+	display:block;
+}
+
+.block{
+  display:block;
+}
+
+.fw{
+  width:100%;
+}
+
+.req::before{
+	content:'*';
+	color:var(--primary_color);
+	display:inline;
+}
+
+.soft_hidden{
+  visibility:hidden;
+}
+
+.hidden{
+	display:none;
+}
+
+.btn_sel{
+	background-color: var(--dark) !important;
+	color: var(--primary_color) !important;
+}
+
+/* MANAGE FOOD */
+#manage_stores_container,
+#manage_foods_container,
+#select_items_container{
+  width:70%;
+  margin:20px auto;
+}
+
+#store_options,
+#food_options,
+#item_options{
+  margin:auto;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+
+}
+
+.manage_foods_delete_container label{
+  padding:0;
+  margin:0;
+}
+
+#select_foods_list tr > td{
+  transition: color 0s, background .1s;
+  padding-left:10px;
+  cursor:default;
+}
+
+/* NOTIFICATIONS */
+.error,
+.success{
+	font-size:12px;
+	background: #333;
+	color:#ff7659;
+	/* margin: 10px 0 5px 0; */
+}
+
+.success{
+	background: #333;
+  color:var(--primary_color);
+}
+
+.notification{
+  position: absolute;
+  z-index: 100;
+  top: 0;
+  left: 0;
+  right: 0;
+  text-align: center;
+  line-height: 2.5;
+  overflow: hidden; 
+  box-shadow:0 0 5px black;
+  overflow-wrap:break-word;
+  box-sizing: border-box;
+}
