@@ -13,7 +13,7 @@ sudo git clone https://github.com/AlexYMR/cpg-milestone
 mv /cpg-milestone/*.* /var/www/html
 mv /cpg-milestone/css /var/www/html
 mv /cpg-milestone/img /var/www/html
-#restart the webserver
+#restart the webserver...
 sudo systemctl start apache2.service
 #replace placeholder text in static website page with user input
 sed -i "s,$WEB_TITLE,WEBPAGE_TITLE,g" /var/www/html/index.html
