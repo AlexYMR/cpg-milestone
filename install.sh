@@ -16,7 +16,7 @@ mv /cpg-milestone/img /var/www/html
 #restart the webserver...
 sudo systemctl start apache2.service
 #replace placeholder text in static website page with user input
-sed -i "s,$WEB_TITLE,WEBPAGE_TITLE,g" /var/www/html/index.html
-sed -i "s,$WEB_HEADER,WEBPAGE_HEADER,g" /var/www/html/index.html
-sed -i "s,$WEB_SUBHEADER,WEBPAGE_SUBHEADER,g" /var/www/html/index.html
-sed -i "s,url(\'../img/$WEB_BACKGROUND.jpg\'),url(\'../img/milestone.jpg\'),g" /var/www/html/css/custom.css
+sed -i "s,WEBPAGE_TITLE,$WEB_TITLE,g" /var/www/html/index.html
+sed -i "s,WEBPAGE_HEADER,$WEB_HEADER,g" /var/www/html/index.html
+sed -i "s,WEBPAGE_SUBHEADER,$WEB_SUBHEADER,g" /var/www/html/index.html
+sed -i "s,url(\'../img/milestone.jpg\'),url(\'../img/$WEB_BACKGROUND.jpg\'),g" /var/www/html/css/custom.css
